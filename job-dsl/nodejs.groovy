@@ -1,8 +1,8 @@
 job('NodeJS example') {
     scm {
-        git('git://github.com/wardviaene/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
-            node / gitConfigName('DSL User')
-            node / gitConfigEmail('jenkins-dsl@newtech.academy')
+        git('git://github.com/Jagbai/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
+            node / gitConfigName('Jagbai')
+            node / gitConfigEmail('james.agbai@hotmail.com')
         }
     }
     triggers {
@@ -13,6 +13,6 @@ job('NodeJS example') {
                          // Manage Jenkins -> Configure Tools -> NodeJS Installations -> Name
     }
     steps {
-        bat("npm install")
+        batchFile("npm install")
     }
 }
