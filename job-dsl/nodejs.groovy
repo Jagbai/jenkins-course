@@ -1,8 +1,8 @@
 job('NodeJS example') {
     scm {
-        git('git://github.com/Jagbai/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
-            node / gitConfigName('James Agbai')
-            node / gitConfigEmail('james.agbai@hotmail.com')
+        git('git://github.com/wardviaene/docker-demo.git') {  node -> // is hudson.plugins.git.GitSCM
+            node / gitConfigName('DSL User')
+            node / gitConfigEmail('jenkins-dsl@newtech.academy')
         }
     }
     triggers {
