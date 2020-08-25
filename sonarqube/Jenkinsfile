@@ -1,5 +1,5 @@
 node {
-    def myGradleContainer = docker.image('gradle:jdk8-alpine')
+    def myGradleContainer = docker.image('gradle:latest')
     myGradleContainer.pull()
 
     stage('prep') {
@@ -8,7 +8,7 @@ node {
 
     stage('build') {
       myGradleContainer.inside("-v ${env.HOME}/.gradle:/home/gradle/.gradle") {
-          sh 'cd complete && /opt/gradle/bin/gradle build''
+        sh 'cd complete && /opt/gradle/bin/gradle build -g gradle_user_home'
       }
     }
 
